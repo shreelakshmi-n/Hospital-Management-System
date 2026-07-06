@@ -7,7 +7,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Hospital Management System</title>
+    <title>Hospital Management Dashboard</title>
 
     <link rel="stylesheet" href="style.css">
 
@@ -17,87 +17,111 @@
 
 <div class="container">
 
-    <!-- ================= Header ================= -->
+    <!-- ================= HEADER ================= -->
 
     <header>
 
         <div class="logo">
 
-            <span class="hospital-icon">🏥</span>
+            <div class="hospital-icon">
+
+                🏥
+
+            </div>
 
             <div>
 
                 <h1>Hospital Management System</h1>
 
-                <p>Patient Database Dashboard</p>
+                <p>Administrator Dashboard</p>
 
             </div>
 
         </div>
 
-        <div class="stats">
+        <div class="clock-card">
 
-            <h3>Total Patients</h3>
+            <h3 id="currentDate">Loading...</h3>
 
-            <span id="patientCount">0</span>
+            <h2 id="currentTime">00:00:00</h2>
 
         </div>
 
     </header>
 
-    <!-- ================= Registration & Verification ================= -->
+    <!-- ================= DASHBOARD CARDS ================= -->
+
+    <section class="dashboard">
+
+        <div class="dash-card">
+
+            <h3>👨 Patients</h3>
+
+            <h1 id="patientCount">0</h1>
+
+        </div>
+
+        <div class="dash-card">
+
+            <h3>🏥 Hospitals</h3>
+
+            <h1 id="hospitalCount">0</h1>
+
+        </div>
+
+        <div class="dash-card">
+
+            <h3>🩺 Doctors</h3>
+
+            <h1 id="doctorCount">0</h1>
+
+        </div>
+
+        <div class="dash-card">
+
+            <h3>🔍 Results</h3>
+
+            <h1 id="searchCount">0</h1>
+
+        </div>
+
+    </section>
+
+    <!-- ================= TOP SECTION ================= -->
 
     <div class="top-section">
 
-        <!-- Patient Registration -->
+        <!-- Registration -->
 
         <section class="card">
 
             <h2>Patient Registration</h2>
 
-            <input
-                type="text"
-                id="id"
-                placeholder="Patient ID">
+            <input type="text" id="id" placeholder="Patient ID">
 
-            <input
-                type="text"
-                id="name"
-                placeholder="Patient Name">
+            <input type="text" id="name" placeholder="Patient Name">
 
-            <input
-                type="text"
-                id="disease"
-                placeholder="Disease">
+            <input type="text" id="disease" placeholder="Disease">
 
-            <input
-                type="text"
-                id="doctor"
-                placeholder="Referred Doctor">
+            <input type="text" id="doctor" placeholder="Referred Doctor">
 
-            <input
-                type="text"
-                id="hospital"
-                placeholder="Hospital Name">
+            <input type="text" id="hospital" placeholder="Hospital Name">
 
             <div class="buttons">
 
-                <button id="saveBtn"
-                        onclick="savePatient()">
+                <button id="saveBtn" onclick="savePatient()">
 
                     Save
 
                 </button>
 
-                <button id="updateBtn"
-                        onclick="updatePatient()">
+                <button id="updateBtn" onclick="updatePatient()">
 
                     Update
 
                 </button>
 
-                <button id="clearBtn"
-                        onclick="clearFields()">
+                <button id="clearBtn" onclick="clearFields()">
 
                     Clear
 
@@ -128,7 +152,7 @@
 
             <div id="verificationResult">
 
-                Enter a Patient ID to verify.
+                Waiting for verification...
 
             </div>
 
@@ -136,11 +160,11 @@
 
     </div>
 
-    <!-- ================= Search ================= -->
+    <!-- ================= SEARCH ================= -->
 
     <section class="card">
 
-        <h2>🔍 Search Patient</h2>
+        <h2>🔍 Search Records</h2>
 
         <input
             type="text"
@@ -149,7 +173,7 @@
 
     </section>
 
-    <!-- ================= Records ================= -->
+    <!-- ================= RECORDS ================= -->
 
     <section class="card">
 
@@ -159,29 +183,27 @@
 
             <thead>
 
-            <tr>
+                <tr>
 
-                <th>ID</th>
+                    <th>ID</th>
 
-                <th>Name</th>
+                    <th>Name</th>
 
-                <th>Disease</th>
+                    <th>Disease</th>
 
-                <th>Doctor</th>
+                    <th>Doctor</th>
 
-                <th>Hospital</th>
+                    <th>Hospital</th>
 
-                <th>Added On</th>
+                    <th>Added On</th>
 
-                <th>Actions</th>
+                    <th>Actions</th>
 
-            </tr>
+                </tr>
 
             </thead>
 
             <tbody id="patientTable">
-
-                <!-- JavaScript will insert records here -->
 
             </tbody>
 
@@ -189,7 +211,7 @@
 
     </section>
 
-    <!-- ================= Server Response ================= -->
+    <!-- ================= SERVER RESPONSE ================= -->
 
     <section class="card">
 
@@ -197,11 +219,19 @@
 
         <div id="response">
 
-            ✅ System Ready
+            ✅ Dashboard Ready
 
         </div>
 
     </section>
+
+    <!-- ================= TOAST ================= -->
+
+    <div id="toast">
+
+        Saved Successfully
+
+    </div>
 
 </div>
 

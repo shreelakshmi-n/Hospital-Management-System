@@ -187,6 +187,7 @@ function displayPatients(list = patients) {
     });
 
     updatePatientCount();
+    updateDashboard(list);
 
 }
 
@@ -260,6 +261,7 @@ function updatePatient() {
     clearFields();
 
     showResponse("✅ Patient Updated Successfully");
+    showToast("✏ Patient Updated");
 
 }
 
@@ -278,6 +280,7 @@ function deletePatient(index) {
         displayPatients();
 
         showResponse("🗑 Patient Deleted");
+        showToast("🗑 Patient Deleted");
 
     }
 
@@ -378,15 +381,17 @@ function verifyPatient() {
 // Auto Load
 // =========================================
 
-window.onload = function () {
+window.onload=function(){
 
     displayPatients();
 
-    updatePatientCount();
+    updateDashboard();
 
-    showResponse("✅ System Ready");
+    updateClock();
 
-};
+    showResponse("✅ Dashboard Ready");
+
+}
 
 // =========================================
 // Enter Key Support
@@ -442,3 +447,78 @@ showResponse = function(message, success = true){
     },4000);
 
 };
+// =========================================
+// VERSION 1.2
+// Dashboard & Clock
+// =========================================
+
+// Update Dashboard Cards
+function updateDashboard(list = patients) {
+
+    // Total Patients
+    document.getElementById("patientCount").textContent = patients.length;
+
+    // Search Results
+    document.getElementById("searchCount").textContent = list.length;
+
+    // Unique Hospitals
+    const hospitals = [...new Set(patients.map(p => p.hospital))];
+
+    document.getElementById("hospitalCount").textContent = hospitals.length;
+
+    // Unique Doctors
+    const doctors = [...new Set(patients.map(p => p.doctor))];
+
+    document.getElementById("doctorCount").textContent = doctors.length;
+
+}
+
+// =========================================
+// Live Clock
+// =========================================
+
+function updateClock(){
+
+    const now = new Date();
+
+    document.getElementById("currentDate").textContent =
+        now.toLocaleDateString("en-IN",{
+
+            weekday:"long",
+
+            day:"numeric",
+
+            month:"long",
+
+            year:"numeric"
+
+        });
+
+    document.getElementById("currentTime").textContent =
+        now.toLocaleTimeString();
+
+}
+
+setInterval(updateClock,1000);
+
+updateClock();
+
+// =========================================
+// Toast Notification
+// =========================================
+
+function showToast(message){
+
+    const toast=document.getElementById("toast");
+
+    toast.innerHTML=message;
+
+    toast.classList.add("show");
+
+    setTimeout(()=>{
+
+        toast.classList.remove("show");
+
+    },3000);
+
+}
