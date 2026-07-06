@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hospital Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ================= Header ================= -->
+
+    <header>
+
+        <div class="logo">
+
+            <span class="hospital-icon">🏥</span>
+
+            <div>
+
+                <h1>Hospital Management System</h1>
+
+                <p>Patient Database Dashboard</p>
+
+            </div>
+
+        </div>
+
+        <div class="stats">
+
+            <h3>Total Patients</h3>
+
+            <span id="patientCount">0</span>
+
+        </div>
+
+    </header>
+
+    <!-- ================= Registration & Verification ================= -->
+
+    <div class="top-section">
+
+        <!-- Patient Registration -->
+
+        <section class="card">
+
+            <h2>Patient Registration</h2>
+
+            <input
+                type="text"
+                id="id"
+                placeholder="Patient ID">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Patient Name">
+
+            <input
+                type="text"
+                id="disease"
+                placeholder="Disease">
+
+            <input
+                type="text"
+                id="doctor"
+                placeholder="Referred Doctor">
+
+            <input
+                type="text"
+                id="hospital"
+                placeholder="Hospital Name">
+
+            <div class="buttons">
+
+                <button id="saveBtn"
+                        onclick="savePatient()">
+
+                    Save
+
+                </button>
+
+                <button id="updateBtn"
+                        onclick="updatePatient()">
+
+                    Update
+
+                </button>
+
+                <button id="clearBtn"
+                        onclick="clearFields()">
+
+                    Clear
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- Verification -->
+
+        <section class="card">
+
+            <h2>Patient Verification</h2>
+
+            <input
+                type="text"
+                id="verifyId"
+                placeholder="Enter Patient ID">
+
+            <button
+                id="verifyBtn"
+                onclick="verifyPatient()">
+
+                Verify Patient
+
+            </button>
+
+            <div id="verificationResult">
+
+                Enter a Patient ID to verify.
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- ================= Search ================= -->
+
+    <section class="card">
+
+        <h2>🔍 Search Patient</h2>
+
+        <input
+            type="text"
+            id="search"
+            placeholder="Search by ID, Name, Disease, Doctor or Hospital">
+
+    </section>
+
+    <!-- ================= Records ================= -->
+
+    <section class="card">
+
+        <h2>Available Records</h2>
+
+        <table>
+
+            <thead>
+
+            <tr>
+
+                <th>ID</th>
+
+                <th>Name</th>
+
+                <th>Disease</th>
+
+                <th>Doctor</th>
+
+                <th>Hospital</th>
+
+                <th>Added On</th>
+
+                <th>Actions</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody id="patientTable">
+
+                <!-- JavaScript will insert records here -->
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+    <!-- ================= Server Response ================= -->
+
+    <section class="card">
+
+        <h2>Server Response</h2>
+
+        <div id="response">
+
+            ✅ System Ready
+
+        </div>
+
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

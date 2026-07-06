@@ -1,0 +1,552 @@
+/* ===========================
+   Google Font
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* ===========================
+   Body
+=========================== */
+
+body{
+
+    background:linear-gradient(135deg,#dbeafe,#bfdbfe,#eff6ff);
+
+    min-height:100vh;
+
+    padding:40px;
+
+    color:#1e293b;
+
+}
+
+/* ===========================
+   Container
+=========================== */
+
+.container{
+
+    max-width:1400px;
+
+    margin:auto;
+
+}
+
+/* ===========================
+   Header
+=========================== */
+
+header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+    background:white;
+
+    padding:25px 35px;
+
+    border-radius:18px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+}
+
+.logo{
+
+    font-size:45px;
+
+}
+
+.logo h1{
+
+    font-size:32px;
+
+    color:#0f172a;
+
+}
+
+.logo p{
+
+    color:#64748b;
+
+}
+
+.stats{
+
+    background:linear-gradient(135deg,#2563eb,#3b82f6);
+
+    color:white;
+
+    padding:18px 28px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+    min-width:170px;
+
+    box-shadow:0 10px 25px rgba(37,99,235,.35);
+
+}
+
+.stats span{
+
+    font-size:38px;
+
+    font-weight:bold;
+
+}
+
+/* ===========================
+   Top Layout
+=========================== */
+
+.top-section{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:25px;
+
+    margin-bottom:25px;
+
+}
+
+/* ===========================
+   Cards
+=========================== */
+
+.card{
+
+    background:rgba(255,255,255,.85);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.card h2{
+
+    margin-bottom:18px;
+
+    color:#2563eb;
+
+}
+
+/* ===========================
+   Inputs
+=========================== */
+
+input{
+
+    width:100%;
+
+    padding:14px;
+
+    margin:10px 0;
+
+    border-radius:10px;
+
+    border:1px solid #cbd5e1;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+input:focus{
+
+    outline:none;
+
+    border-color:#2563eb;
+
+    box-shadow:0 0 10px rgba(37,99,235,.2);
+
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.buttons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:20px;
+
+}
+
+button{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:13px 24px;
+
+    border-radius:12px;
+
+    color:white;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* Save */
+
+#saveBtn{
+
+    background:#16a34a;
+
+}
+
+#saveBtn:hover{
+
+    background:#15803d;
+
+}
+
+/* Update */
+
+#updateBtn{
+
+    background:#2563eb;
+
+}
+
+#updateBtn:hover{
+
+    background:#1d4ed8;
+
+}
+
+/* Delete */
+
+#deleteBtn{
+
+    background:#dc2626;
+
+}
+
+#deleteBtn:hover{
+
+    background:#b91c1c;
+
+}
+
+/* Clear */
+
+#clearBtn{
+
+    background:#64748b;
+
+}
+
+#clearBtn:hover{
+
+    background:#475569;
+
+}
+
+/* Verify */
+
+#verifyBtn{
+
+    background:#7c3aed;
+
+    width:100%;
+
+    margin-top:10px;
+
+}
+
+#verifyBtn:hover{
+
+    background:#6d28d9;
+
+}
+
+/* ===========================
+   Search
+=========================== */
+
+#search{
+
+    font-size:16px;
+
+}
+
+/* ===========================
+   Table
+=========================== */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:15px;
+
+    overflow:hidden;
+
+}
+
+thead{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+th{
+
+    padding:15px;
+
+}
+
+td{
+
+    padding:14px;
+
+    text-align:center;
+
+    border-bottom:1px solid #e2e8f0;
+
+}
+
+tbody tr:nth-child(even){
+
+    background:#f8fafc;
+
+}
+
+tbody tr:hover{
+
+    background:#dbeafe;
+
+}
+
+/* Edit */
+
+.edit{
+
+    background:#f59e0b;
+
+    padding:9px 15px;
+
+    border-radius:8px;
+
+    margin-right:8px;
+
+}
+
+.edit:hover{
+
+    background:#d97706;
+
+}
+
+/* Delete */
+
+.delete{
+
+    background:#ef4444;
+
+    padding:9px 15px;
+
+    border-radius:8px;
+
+}
+
+.delete:hover{
+
+    background:#dc2626;
+
+}
+
+/* ===========================
+   Response Box
+=========================== */
+
+#response{
+
+    padding:18px;
+
+    border-radius:12px;
+
+    background:#ecfdf5;
+
+    border-left:6px solid #22c55e;
+
+    font-weight:600;
+
+    color:#166534;
+
+    transition:.3s;
+
+}
+
+/* ===========================
+   Verification
+=========================== */
+
+#verificationResult{
+
+    margin-top:20px;
+
+    padding:15px;
+
+    border-radius:10px;
+
+    background:#eef2ff;
+
+    text-align:center;
+
+    font-weight:600;
+
+    color:#4338ca;
+
+}
+
+/* ===========================
+   Scrollbar
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#3b82f6;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#e2e8f0;
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:1000px){
+
+.top-section{
+
+grid-template-columns:1fr;
+
+}
+
+header{
+
+flex-direction:column;
+
+gap:20px;
+
+text-align:center;
+
+}
+
+.buttons{
+
+justify-content:center;
+
+}
+
+}
+
+@media(max-width:700px){
+
+body{
+
+padding:20px;
+
+}
+
+table{
+
+display:block;
+
+overflow-x:auto;
+
+}
+
+.logo h1{
+
+font-size:24px;
+
+}
+
+.stats{
+
+width:100%;
+
+}
+
+button{
+
+width:100%;
+
+}
+
+}
